@@ -8,7 +8,7 @@ const Home = (props) => {
 
   const getTable = () => {
     return(
-      <Table />
+      <Table tableData={props.tableData}/>
     )
   }
 
@@ -18,7 +18,7 @@ const Home = (props) => {
         <h1>Financial Advisor</h1>
       </header>
       <body>
-        
+        {getTable()}
       </body>
     </div>
   )
