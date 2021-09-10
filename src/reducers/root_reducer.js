@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { tableData } from '../store/tableData';
+import riskReducer from './risk_reducer';
+// import { tableData } from '../store/tableData';
 
 export default combineReducers({
-  tableData: tableData
+  // tableData: tableData,
+  risk: riskReducer
 });
