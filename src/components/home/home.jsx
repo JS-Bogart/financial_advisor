@@ -17,9 +17,9 @@ const Home = (props) => {
       <header>
         <h1>Financial Advisor</h1>
       </header>
-      <body>
+      <div>
         {getTable()}
-      </body>
+      </div>
     </div>
   )
 }
