@@ -79,4 +79,4 @@ export const tableData = [
     foreign: 30,
     smallCap: 40
   }
-]
+];
