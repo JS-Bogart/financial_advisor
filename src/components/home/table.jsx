@@ -4,18 +4,25 @@ const Table = (props) => {
 
   const tableHeaders = <tr>
     <th className="col-risk">Risk</th>
-    <th className="col-bonds">Bonds</th>
-    <th className="col-large">Large Cap</th>
-    <th className="col-mid">Mid Cap</th>
-    <th className="col-foreign">Foreign</th>
-    <th className="col-small">Small Cap</th>
+    <th className="col-bonds">Bonds %</th>
+    <th className="col-large">Large Cap %</th>
+    <th className="col-mid">Mid Cap %</th>
+    <th className="col-foreign">Foreign %</th>
+    <th className="col-small">Small Cap %</th>
   </tr>
+
+  const rowHighlight = (risk) => {
+    return(
+      (risk === props.selectedRisk) ?
+        "-hl" : ""
+    ) 
+  }
 
   const getTableData = () => {
     return props.tableData.map((row) => {
       const { risk, bonds, largeCap, midCap, foreign, smallCap } = row
       return (
-        <tr key={risk}>
+        <tr key={risk} className={`table-row${rowHighlight(risk)}`}>
           <td>{risk}</td>
           <td>{bonds}</td>
           <td>{largeCap}</td>
