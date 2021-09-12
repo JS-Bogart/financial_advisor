@@ -13,6 +13,15 @@ const Home = (props) => {
     )
   }
 
+  const getDataButton = () => {
+    return(
+      (dataDisplay === "table") ?
+        <button onClick={() => setDataDisplay("pie-graph")}>Pie Graph</button>
+      :
+        <button onClick={() => setDataDisplay("table")}>Table</button>
+    )
+  }
+
   const buttonHighlight = (risk) => {
     return(
       (risk === selectedRisk) ?
@@ -42,7 +51,10 @@ const Home = (props) => {
         ))}</div>
       </div>
       <div>
-        {getTable()}
+        <div>
+          {getTable()}
+        </div>
+        {getDataButton()}
       </div>
     </div>
   )
